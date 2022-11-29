@@ -1,12 +1,15 @@
 import TextoCentral from "../../components/TextoCentral";
 
 const TelaC = (props) => {
-  const route = props.route || { params: { numero: 0 } };
+  const r = props.route;
+  const numero = r && r.params && r.params.numero
+    ? props.route.params.numero : 0;
+
   return (
-    <TextoCentral corFundo='#9932CD'>
-      Tela C - {route.params.numero}
+    <TextoCentral corFundo='#9932cd'>
+      Tela C - {numero}
     </TextoCentral>
   )
-}
+};
 
 export default TelaC;
